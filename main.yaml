@@ -1,0 +1,35 @@
+---
+- name: Install apache
+  hosts: all
+  become: true
+  
+  vars_files:
+    - /home/oakkas/ansible/vars.yaml 
+
+  tasks:
+    - name: install flask and pip
+      apt: 
+        pkg: 
+        - libpq-dev
+        - libmysqlclient-dev
+        - libxml2-dev
+        - libjpeg62
+        - libjpeg62-dev
+        - libfreetype6
+        - libfreetype6-dev
+        - zlib1g-dev
+        - mysql-client
+        - python-dev
+        - python-setuptools
+        - python-imaging
+        - python-mysqldb
+        - python-psycopg2
+        - git-core
+        - nginx
+        state: present
+    
+    - name: clone template
+      git:
+        repo: https://github.com/gcpcodingbook/personal_web_page_template.git
+        dest: /home/oakkas/personal_web_page_template
+      

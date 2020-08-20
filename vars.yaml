@@ -1,0 +1,5 @@
+---
+conf_src1: /home/oakkas/ansible/httpd.conf
+conf_dest1: /etc/httpd/conf/httpd.conf
+conf_src2: /home/oakkas/ansible/httpd-vhots.conf
+conf_dest2: /etc/httpd-vhots/conf/httpd-vhost.conf
